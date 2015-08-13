@@ -1,0 +1,469 @@
+/* 
+    Document   : outhome
+    Created on : 2010-4-30, 11:17:51
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+@import url("initial.css");
+
+/*应付IE*/
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+a:hover {
+    color:orange;
+}
+dl, dt, dd {
+    margin:0px;
+    padding:0px;
+    margin-left:0px;
+}
+ol, ul, ol li, ul li {
+    list-style:none;
+}
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+/*应付IE*/
+
+/*---------------------------------------
+    OUT OF Home.jsp
+---------------------------------------*/
+/*  info.jsp    */
+#info-nav {
+    margin:10px 0px 20px 0px;
+    padding:5px 2px;
+    border:1px solid #d8eed8;
+}
+#info-nav h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#info-nav p {
+    padding:5px 10px;
+}
+#basic-info, #blog-info, #preview-info {
+    margin:10px 0px 20px 0px;
+    padding:5px 2px;
+    border:1px solid #d8eed8;
+}
+#basic-info h4, #blog-info h4, #preview-info h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#basic-info p, #blog-info p, #preview-info p {
+    padding:5px 10px;
+}
+
+/*  note.jsp    */
+#note-table {
+    margin:10px 0px 20px 0px;
+    padding:5px 2px;
+    border:1px solid #d8eed8;
+}
+#note-table table {
+    width:100%;
+    /*border:1px solid #e0e0e0;*/
+}
+#note-table table th, #note-table table td {
+    /*只有table的cellspacing为零或border-collapse:collpase;时才奏效*/
+    margin:0px;
+    padding:5px 20px;
+    border-bottom:1px solid #b0b0b0;
+}
+#note-table h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#note-table p {
+    padding:5px 10px 0px 10px;
+}
+#note-table a {
+    float:right;
+    padding:0px 5px;
+    display:inline;
+}
+#note-table #reply-note a {
+    float:none;
+    padding:0px 5px;
+}
+#note-table table p {
+    padding:2px 5px;
+    line-height:120%;
+}
+#reply-note {
+    display:block;
+    margin:5px 200px 5px 20px;
+}
+/*-------------------------------------------
+    REPLY NOTE IN renote.jsp
+--------------------------------------------*/
+#reply-note .show-reply-note {
+    display:block;
+    padding:10px;
+    border-bottom:1px solid #ffffff;
+    background:#c0c0c0;
+}
+#reply-note .hide-reply-note {
+    padding:10px;
+    border-bottom:1px solid #ffffff;
+    background:#c0c0c0;
+    display:none;
+}
+#write-note {
+    margin:10px 0px 20px 0px;
+    padding:5px 2px;
+    border:1px solid #d8eed8;
+}
+#write-note h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#write-note p {
+    padding:5px 10px 2px 10px;
+}
+
+/*  mood.jsp    */
+#write-mood {
+    margin:10px 0px 20px 0px;
+    padding:5px 10px;
+    border-bottom:1px solid #d8eed8;
+}
+#write-mood h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#write-mood p {
+    padding:5px 10px;
+}
+#mood-nav {
+    padding:2px 10px;
+    border-bottom:1px solid #d8eed8;
+}
+#mood-nav a {
+    margin:0px 5px 0px 5px;
+}
+#mood-nav a.current-tab {
+    padding:5px 10px;
+    border:1px solid #d8eed8;
+    border-bottom:0px solid #d8eed8;
+}
+#mood-nav a.not-current-tab  {
+    padding:5px 10px;
+    border:0px solid #d8eed8;
+    /*border-bottom:1px solid #d8eed8;*/
+}
+#friend-mood, #my-mood {
+    margin:10px 0px 20px 0px;
+    padding:10px 5px;
+    /*border:1px solid #d8eed8;*/
+}
+#friend-mood p, #my-mood p {
+    padding:5px 20px;
+}
+/*#friend-mood a.eidt, #my-mood a.edit {
+    float:right;
+    padding-right:20px;
+}*/
+#friend-mood p.date, #my-mood p.date {
+    border-bottom:1px solid #d8eed8;
+    padding-top:0px;
+    margin-bottom:10px;
+}
+
+/*  news.jsp    */
+#news-list {
+    margin:10px 0px 20px 0px;
+}
+#news-list h4 {
+    padding:3px 5px 3px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#news-list h4 a {
+    float:right;
+    padding-right:20px;
+    display:inline;
+}
+#news-list p {
+    padding:3px 10px;
+}
+#news-list p span#news-info {
+    float:right;
+    padding-right:10px;
+    display:inline;
+}
+#news-list p#news-total-page {
+    padding:10px 0px 2px 2px;
+}
+#news-list p#news-find-page {
+    text-align:center;
+}
+#news-type {
+    margin:10px 0px 20px 0px;
+    border:1px solid #d8eed8;
+}
+#news-type h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#news-type p {
+    padding:3px 20px;
+}
+#add-news {
+    margin:10px 0px 20px 0px;
+    border:1px solid #d8eed8;
+}
+#add-news h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#add-news p {
+    padding:10px 20px;
+}
+#mrg-news-type-headline {
+    margin:10px 0px 20px 0px;
+}
+#mrg-news-type-headline h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#edit-news-type {
+    margin:10px 0px 20px 0px;
+    padding:2px 300px 2px 50px;
+}
+#edit-news-type p {
+    padding:3px 20px 10px 20px;
+}
+#edit-news-type div.show-edit-type {
+    /*初始列出可编辑的分类*/
+    display:block;
+    padding:5px 20px;
+    border-bottom:1px solid #d8eed8;
+}
+#edit-news-type div.show-edit-type a {
+    /*初始列出可编辑的分类*/
+    float:right;
+    padding-right:20px;
+    /*display:inline;*/
+    overflow:auto;
+}
+#edit-news-type div.show-edit-type a#cancel-edit {
+    /*初始列出可编辑的分类*/
+    float:none;
+    padding-right:0px;
+}
+#edit-news-type div.hide-edit-type {
+    /*初始列出可编辑的分类*/
+    display:none;
+    padding:3px 20px;
+}
+#add-news-type {
+    margin:10px 0px 20px 0px;
+    padding:2px 300px 2px 40px;
+}
+#add-news-type  p {
+    padding:3px 20px;
+}
+#add-news-type div#show-add-news-type {
+    /*初始列出可新增的分类*/
+    padding:2px 0px 20px 10px;
+}
+#add-news-type .hide-add-type {
+    /*添加分类,初始为隐藏*/
+    display:none;
+}
+#add-news-type div.show-add-type {
+    /*添加分类表单可见*/
+    display:block;
+}
+#add-news-type div #show-add-news-type a#return {
+    /*初始列出可新增的分类*/
+    float:right;
+    padding-right:20px;
+    display:inline;
+}
+
+/*newsdisplay.jsp*/
+#news-display {
+    margin:10px 0px 20px 0px;
+    padding:2px 10px 20px 10px;
+    border:1px solid #d8eed8;
+}
+#news-display h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#news-display p {
+    padding:3px 20px;
+}
+#news-display a.edit {
+    float:right;
+    padding-right:20px;
+    display:inline;
+}
+#news-display a.return {
+    float:right;
+    padding-right:20px;
+    display:inline;
+}
+#news-display p#news-info {
+    font-size:90%;
+    padding:3px 20px 20px 20px;
+}
+#news-display p#content {
+    font-size:100%;
+    line-height:120%;
+}
+/*comment*/
+#comment {
+    margin:10px 0px 20px 0px;
+    padding:2px 10px 2px 10px;
+    /*border:1px solid #d8eed8;*/
+}
+#comment h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#comment p {
+    padding:3px 20px;
+}
+#comment a.edit {
+    float:right;
+    padding-right:20px;
+    display:inline;
+}
+#comment p.comment-content {
+    margin:0px 0px 10px 0px;
+    border-bottom:1px solid #d8eed8;
+    padding:3px 70px;
+}
+#write-comment {
+    margin:10px 0px 20px 0px;
+    padding:2px 10px 2px 10px;
+    /*border:1px solid #d8eed8;*/
+}
+#write-comment h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#write-comment p {
+    padding:3px 10px;
+}
+/*  preview.jsp   */
+#preview {
+    margin:10px 0px 20px 0px;
+    padding:2px 10px 20px 10px;
+    border:1px solid #d8eed8;
+}
+#preview h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#preview p {
+    padding:3px 20px;
+}
+
+/*  firend.jsp   */
+#friend-headline {
+    margin:10px 0px 20px 0px;
+}
+#friend-headline h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#friend-nav {
+    padding:2px 10px;
+    border-bottom:1px solid #d8eed8;
+}
+#friend-nav a {
+    margin:0px 5px 0px 5px;
+}
+#friend-nav a.current-tab {
+    padding:5px 10px;
+    border:1px solid #d8eed8;
+    border-bottom:0px solid #d8eed8;
+}
+#friend-nav a.not-current-tab  {
+    padding:5px 10px;
+    border:0px solid #d8eed8;
+    /*border-bottom:1px solid #d8eed8;*/
+}
+#friend-info, #friend-request, #friend-track, #my-track {
+    margin:10px 0px 20px 0px;
+    padding:10px 5px;
+    /*border:1px solid #d8eed8;*/
+}
+#friend-info h, #friend-request p, #friend-track p, #my-track p {
+    padding:5px 20px;
+}
+#friend-info p, #friend-request p, #friend-track p, #my-track p {
+    padding:5px 20px;
+}
+#friend-info a.edit, #friend-request a.edit, #friend-track a.edit, #my-track a.edit {
+    float:right;
+    padding-right:20px;
+}
+#friend-info p.endline, #friend-request p.endline, #friend-track p.endline, #my-track p.endline {
+    margin:0px 0px 10px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+
+/*  login.jsp   */
+#login {
+    margin:200px auto;
+    padding:20px 30px;
+}
+#login h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#login p {
+    padding:5px 20px;
+}
+#login a {
+    float:right;
+    padding-right:20px;
+}
+/*  register    */
+#register {
+    margin:200px auto;
+    padding:20px 30px;
+}
+#register h4 {
+    padding:10px 5px 5px 10px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#register p {
+    padding:5px 20px;
+}
+#register a {
+    float:right;
+    padding-right:20px;
+}
+

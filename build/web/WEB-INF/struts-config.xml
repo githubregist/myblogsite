@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    
+    <form-beans>
+        <form-bean name="CommentForm" type="com.myapp.struts.form.CommentForm"/>
+        <form-bean name="NewsForm" type="com.myapp.struts.form.NewsForm"/>
+        <form-bean name="UserForm" type="com.myapp.struts.form.UserForm"/>
+        <form-bean name="registerForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="username" type="java.lang.String" />
+            <form-property name="password" type="java.lang.String" />
+            <form-property name="con_password" type="java.lang.String" />
+            <form-property name="email" type="java.lang.String" />
+            <form-property name="validate" type="java.lang.String" />
+        </form-bean>
+        <form-bean name="noteForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="notecontent" type="java.lang.String" />
+        </form-bean>
+        <form-bean name="moodForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="moodcontent" type="java.lang.String" />
+        </form-bean>
+        <form-bean name="newstypeForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="type" type="java.lang.String" />
+            <form-property name="edittype" type="java.lang.String" />
+        </form-bean>
+<!--        <form-bean name="renoteForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="renotecontent" type="java.lang.String" />
+        </form-bean>-->
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <!--
+            LOGIN,LOGOUT,REGISTER
+        -->
+        <action name="UserForm" path="/login" scope="request"
+        type="com.myapp.struts.action.LoginAction" validate="false" >
+            <forward name="failure" path="/login.jsp" />
+        </action>
+        <action path="/logout" type="com.myapp.struts.action.LogoutAction">
+            <forward name="success" path="/login.jsp" />
+        </action>
+        <action input="/register.jsp" name="registerForm" path="/checkregister" scope="session"
+                type="com.myapp.struts.action.CheckRegisterAction" validate="false">
+            <forward name="success" path="/login.jsp" />
+            <forward name="failure" path="/register.jsp" />
+        </action>
+        <!--
+        NEWS
+        -->
+        <!-- ADD -->
+        <action path="/preaddnews" type="com.myapp.struts.action.PreAddNewsAction">
+            <forward name="success" path="/addnews.jsp" />
+        </action>
+        <action path="/previewnews" type="com.myapp.struts.action.PreviewAction">
+            <forward name="success" path="/previewnews.jsp" />
+        </action>
+        <action  path="/addnews" scope="session"
+            type="com.myapp.struts.action.AddNewsAction" validate="false">
+            <forward name="success" path="/log.do" />
+            <forward name="failure" path="/addnews.jsp" />
+        </action>
+        <!-- LIST -->
+        <action name="NewsForm" path="/log" scope="session"
+            type="com.myapp.struts.action.ListNewsAction" validate="false">
+            <forward name="news" path="/news.jsp" />
+            <forward name="vnews" path="/vnews.jsp" />
+        </action>
+        <action name="NewsForm" path="/displaynews" scope="session"
+            type="com.myapp.struts.action.DisplayNewsAction" validate="false">
+            <forward name="success" path="/newsdisplay.jsp" />
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <!-- EDIT -->
+        <action path="/premotifynews" scope="session"
+        type="com.myapp.struts.action.PreMotifyNewsAction" validate="false">
+            <forward name="success" path="/motifynews.jsp" />
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <action path="/motifynews" scope="session"
+            type="com.myapp.struts.action.MotifyNewsAction" validate="false">
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <action name="NewsForm" path="/deletenews" scope="session"
+            type="com.myapp.struts.action.DeleteNewsAction" validate="false">
+            <forward name="success" path="/log.do" />
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <!-- NEWS TYPE -->
+        <action input="news.jsp" name="newstypeForm" path="/newstypeMrg" type="com.myapp.struts.action.NewsTypeMrgAction">
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <action path="/listtypenews" type="com.myapp.struts.action.ListTypeNewsAction">
+            <forward name="success" path="/news.jsp" />
+        </action>
+        <!--
+            COMMENT
+        -->
+        <action input="/displaynews" name="CommentForm" path="/addcomment"
+        scope="session" type="com.myapp.struts.action.AddCommentAction" validate="false">
+            <forward name="failure" path="/error.jsp" />
+        </action>
+        <action input="/displaynews" name="CommentForm" path="/deletecomment"
+            scope="session" type="com.myapp.struts.action.DeleteCommentAction" validate="false"/>
+       <!--
+            FRIEND
+       -->
+        <action path="/friend" type="com.myapp.struts.action.ListFriendsAction">
+            <forward name="friend" path="/friend.jsp" />
+            <forward name="vfriend" path="/vfriend.jsp" />
+        </action>
+        <action path="/managerfriend" type="com.myapp.struts.action.ManagerFriendAction"/>
+        <!--
+            NOTE
+        -->
+        <action input="/note.jsp" name="noteForm" path="/noteMrg" scope="session"
+            type="com.myapp.struts.action.NoteMrgAction" validate="false">
+        </action>
+        <action path="/note" type="com.myapp.struts.action.ListNotesAction">
+            <forward name="note" path="/note.jsp" />
+            <forward name="vnote" path="/vnote.jsp" />
+        </action>
+        <action path="/renoteMrg" scope="session" type="com.myapp.struts.action.RenoteMrgAction" />
+        <!--
+            MOOD
+        -->
+        <action path="/mood" type="com.myapp.struts.action.ListMoodAction">
+            <forward name="mood" path="/mood.jsp" />
+            <forward name="vmood" path="/vmood.jsp" />
+        </action>
+        <action input="/" name="moodForm" path="/moodMrg" scope="session"
+        type="com.myapp.struts.action.MoodsMrgAction" validate="false"/>
+        <!--
+            PERSONAL INFO
+        -->
+        <action input="/" name="UserForm" path="/infoMrg" scope="session"
+        type="com.myapp.struts.action.InfoMrgAction" validate="false"/>
+        <action path="/info" type="com.myapp.struts.action.InfoAction">
+            <forward name="about" path="/info.jsp" />
+            <forward name="vabout" path="/vinfo.jsp" />
+        </action>
+        <!--
+            OTHERS
+        -->
+        <action path="/home" scope="session" type="com.myapp.struts.action.HomeAction">
+            <forward name="home" path="/home.jsp" />
+            <forward name="vhome" path="/vhome.jsp" />
+        </action>
+        <action path="/firstvisit" type="com.myapp.struts.action.FirstVisitAction" scope="session"/>
+        <action path="/register" forward="/register.jsp" />
+        <action path="/Welcome" forward="/login.jsp"/>
+        <action path="/photo" forward="/photo.jsp" />
+
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

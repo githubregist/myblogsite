@@ -1,0 +1,222 @@
+/* 
+    Document   : home
+    Created on : 2010-4-30, 10:43:33
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+@import url("initial.css");
+/*----------------------------------------------
+    HOME home.jsp
+----------------------------------------------*/
+/*应付IE*/
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+a:hover {
+    color:orange;
+}
+dl, dt, dd {
+    margin:0px;
+    padding:0px;
+    margin-left:0px;
+}
+ol, ul, ol li, ul li {
+    list-style:none;
+}
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+/*应付IE*/
+
+#home-top {
+    padding:5px 10px;
+    text-align:right;
+}
+#home-top a {
+    text-decoration:underline;
+}
+#blog-name {
+    padding:5px 10px;
+    text-align:left;
+}
+#blog-name h3 {
+    padding:15px 0px 0px 0px;
+    font-size:larger;
+}
+#blog-name h4 {
+    padding:0px 0px 20px 10px;
+    font-size:small;
+}
+#home-nav {
+    padding:5px 0px 5px 5px;
+    text-align:left;
+    font-size:larger;
+    background:#aaaaaa;
+    background:url(nav.jpg) repeat-x center;
+}
+#home-nav a {
+    color:white;
+}
+#home-nav a:hover {
+    text-decoration:underline;
+}
+/*-----------------------------------
+    左栏
+-------------------------------------*/
+#home-about {
+    /*border:1px solid #a0a0a0;*/
+    margin:10px 0px 20px 0px;
+}
+#home-about p {
+    padding:2px 10px;
+}
+#home-recommend-friend, #recent-note {
+    /*border:1px solid #a0a0a0;*/
+    margin:10px 0px 20px 0px;
+    float:left;
+}
+#home-about h4,#home-recommend-friend h4, #recent-note h4 {
+    /*background:#c0c0c0;*/
+    padding:1px 5px 2px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+/*-------------------------------------------
+  recent note
+--------------------------------------------*/
+
+#recent-note dl, #home-recommend-friend dl{
+    margin:10px;
+    float:left;/*也是用来消除浮动*/
+    display:inline;
+    width:147px;/*为IE/Mac打的补丁，用了之后，图片便移到与标题同一行*/
+    /*overflow:auto;*//*这个似乎没效果，至少对于右栏*/
+}
+#recent-note dt, #home-recommend-friend dt {
+    /*letter-spacing:1px;*/
+    float:right;
+    /*widthr和计法：930px * 18%=167px
+    167px-20(dl padding) = 147px
+    147px - 50px(图片及基右边距) = 97px*/
+    width:85px;
+    /*    letter-spacing:1px;*/
+}
+#recent-note dd, #home-recommend-friend dd {
+    /*应该不用考虑做成表格效果吧*/
+    font-size:90%;
+    line-height:120%;
+    margin:0px 0px 0px 50px;
+    /*非图片设一个左边距等于图片宽度加上图片右边距，以成为表格效果。图片不设*/
+}
+#recent-note dl dd.img, #home-recommend-friend dl dd.img {
+    margin:0px 0px 0px 0px;
+    /*表格效果*/
+}
+#recent-note dd.img img, #home-recommend-friend dd.img img {
+    float:left;
+    margin:0px 10px 0px 0px;
+}
+/*------------------------------
+    中栏  Home Mood
+---------------------------*/
+#home-mood {
+    width:98%;
+    margin-bottom:30px;
+}
+#user {
+    float:left;
+    padding-left:10px;
+    /*display:inline;*/
+}
+#home-write-mood {
+    float:left;
+    margin-left:30px;
+    /*display:inline;*/
+}
+#recent-log {
+    /*overflow:auto;*/
+    clear:both;
+    /*display:inline-block;*/
+    margin:10px 0px 20px 0px;
+    padding-top:30px;
+}
+#dynamic-message {
+    clear:both;
+    margin:10px 0px 20px 0px;
+}
+#recent-log  h4, #dynamic-message h4 {
+    padding:1px 5px 2px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#recent-log p, #dynamic-message p {
+    line-height:120%;
+    padding:2px 5px 2px 5px;
+}
+/*----------------------------------------
+    右栏
+----------------------------------------*/
+#home-message, #home-track {
+    margin:10px 0px 20px 0px;
+}
+#home-message p {
+    padding:2px 10px;
+}
+#home-track h4, #home-message h4 {
+    padding:1px 5px 2px 5px;
+    margin:0px 0px 8px 0px;
+    border-bottom:1px solid #d8eed8;
+}
+#home-track a {
+    margin:2px 0px 5px 0px;
+}
+#home-friend-track, #home-my-track{
+    /*margin:10px 0px 20px 0px;/* 似乎对于每一块都已成为惯例*/
+    float:left;/*也是用来消除浮动*/
+}
+#home-track .hide {
+    display:none;
+}
+#home-track .show {
+    display:block;
+}
+#home-friend-track dl, #home-my-track dl{
+    margin:10px;
+    float:left;/*也是用来消除浮动*/
+    display:inline;
+    width:147px;/*为IE/Mac打的补丁，用了之后，图片便移到与标题同一行*/
+    /*overflow:auto;*//*这个似乎没效果，至少对于右栏*/
+}
+#home-friend-track dt, #home-my-track dt {
+    float:right;
+    /*widthr和计法：930px * 18%=167px
+    167px-20(dl padding) = 147px
+    147px - 50px(图片及基右边距) = 97px*/
+    width:97px;
+    /*    letter-spacing:1px;*/
+}
+#home-friend-track dd, #home-my-track dd {
+    /*应该不用考虑做成表格效果吧*/
+    font-size:90%;
+    line-height:120%;
+    margin:0px 0px 0px 50px;
+    /*非图片设一个左边距等于图片宽度加上图片右边距，以成为表格效果。图片不设*/
+}
+#home-friend-track dl dd.img, #home-my-track dl dd.img{
+    margin:0px 0px 0px 0px;
+    /*表格效果*/
+}
+#home-friend-track dd.img img, #home-my-track dd.img img {
+    float:left;
+    margin:0px 10px 0px 0px;
+}

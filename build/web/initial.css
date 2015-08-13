@@ -1,0 +1,83 @@
+/* 
+    Document   : initial
+    Created on : 2010-4-30, 11:07:26
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
+blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img {
+    border:0;
+}
+/*address,caption,cite,code,dfn,em,strong,th,var {
+    font-style:normal;
+    font-weight:normal;
+}*/
+ol,ul {
+    list-style:none;
+}
+/*caption,th {
+    text-align:left;
+}*/
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+   /* font-weight:normal;*/
+}
+q:before,q:after {
+    content:"";
+}
+abbr,acronym {
+    border:0;
+}
+/*-----------------------------------
+	html元素
+-----------------------------------*/
+body {
+    margin:0px;
+    padding:0px;
+    font-family:宋体,sans-serif;
+    /*浏览器默认的中等字体为16px,现设基字体大小为10px,后面通过em来扩展*/
+    font-size:small;
+    background:url(bg.jpg) no-repeat;
+}
+/*无效设计：有垂直边距的元素*/
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,p,pre,blockquote,th,td {
+    margin:0px;
+    padding:0px;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+a:hover {
+    color:orange;
+}
+hr {
+    border:none;
+    border-top:1px solid #d8eed8;
+}
+
+/*------------------------------------------
+    PERSONAL INFO    FRIEND MANAGER friendlist.jsp
+--------------------------------------------*/
+.show {
+    display:block;
+}
+.hide {
+    display:none;
+}
+

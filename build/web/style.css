@@ -1,0 +1,95 @@
+@charset "utf-8";
+@import url("home.css");
+@import url("outhome.css");
+/* =INITIAL
+    author:guohengj
+    version:1.0
+*/
+
+/*通用框架设计*/
+#container {
+    width:930px;
+    margin:0 auto;
+}
+#header {
+    width:100%;
+    margin-bottom:20px;
+	background:url(head.jpg) no-repeat;
+}
+#content{
+    /*对于中间只有一栏的情况使用#content*/
+    width:100%;
+}
+#main-left {
+    /**/
+    width:79%;
+    float:left;
+}
+#main-left-left {
+    width:24%;
+    float:left;
+}
+#main-left-right {
+    width:74%;
+    float:right;
+}
+#main-right {
+    /**/
+    width:79%;
+    float:right;
+}
+#sidebar-left {
+    /*左边的sideber*/
+    width:19%;
+    float:left;
+}
+#sidebar-right {
+    width:19%;
+    float:right;
+}
+/*#main-left-top div {
+    padding:2%;
+}*/
+/*#main-left-left div {
+    padding-right:2%;
+}
+#main-left-right div {
+    padding-left:2%;
+}
+#main-left div,#sidebar-left div {
+    padding-right:2%;
+}
+#main-right div,#sidebar-right div {
+    padding-left:2%;
+}*/
+#footer {
+    position:relative;
+    width:100%;
+    height:30px;
+    clear:both;
+    text-align:center;
+}
+#clear{
+    clear:both;
+}
+
+#foot {
+    text-align:center;
+    background:d8eed8;
+    padding:10px 10px 20px 20px;
+}
+#foot p {
+    color:blue;
+    font-size:smaller;
+}
+#foot hr {
+    border:0px;
+    border-bottom:1px solid #ffffff;
+}
+
+
+/*-------------------------------------------
+    newslist.jsp
+---------------------------------------------*/
+
+

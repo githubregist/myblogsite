@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.switchOut { position:fixed; right:10px; top:97px; *top:100px; width:67px; height:61px; z-index:99; _position:absolute; }
+.switch { width:67px; height:61px; z-index:99; background:url(http://public.blogbus.com/blogbus/skin/5000/60_on.png) no-repeat center center; _background-image:url(http://public.blogbus.com/blogbus/skin/5000/60_on.gif); text-indent:-99999px; overflow:hidden; display:block; }
+.switchOn { width:67px; height:61px; z-index:99; background:url(http://public.blogbus.com/blogbus/skin/5000/60_off.png) no-repeat center center; _background-image:url(http://public.blogbus.com/blogbus/skin/5000/60_off.gif); text-indent:-99999px; overflow:hidden; display:block; }
+.earth60 { width:481px; height:213px; background:url(http://public.blogbus.com/blogbus/skin/5000/60_text60.png) no-repeat center center; _background-image:url(http://public.blogbus.com/blogbus/skin/5000/60_text60.gif); position:fixed; display:none; _position:absolute; }
+.earth60 a { display:block; width:481px; height:213px; overflow:hidden; text-indent:-99999px; }
+#popupMask { display:none; background:#000; opacity:0.9;filter:alpha(opacity=90); top:0; left:0; position:absolute; width:100%; height:100%; }
